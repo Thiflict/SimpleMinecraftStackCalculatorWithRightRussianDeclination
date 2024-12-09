@@ -12,7 +12,7 @@ class Test {
         var preLastDigit = 0
         var lastDigit = 0
 
-        for (i in numLength..1) {
+        for (i in numLength downTo 1) {
             var numBuffer = numInput
             val zeros = 10.0.pow(i.toDouble() - 1).toInt()
 
