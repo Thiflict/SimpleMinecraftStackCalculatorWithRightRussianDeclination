@@ -1,7 +1,17 @@
-package org.example
+package ru.thiflict
 
-fun main() {
-    val amountOfItems = readln().toIntOrNull() ?: return println("Wrong input!") // Ввод общего количества предметов
+fun main(args: Array<String>) {
+
+    if (args.isEmpty()) {
+        println("Нет входного аргумента. Выход.")
+        return
+    }
+    if (args.size > 1) {
+        println("Слишком много аргументов. Выход.")
+        return
+    }
+
+    val amountOfItems = args.first().toIntOrNull() ?: return println("Wrong input!") // Ввод общего количества предметов
 
     val shulkers: Int = amountOfItems / 1728 // Вычисление, сколько шалкеров
     val stacksForShulkers = (amountOfItems - (shulkers * 1728)) / 64
